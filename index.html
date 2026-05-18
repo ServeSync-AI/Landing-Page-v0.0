@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ServeSync AI — Automate Calls. Book More. Serve Faster.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="logo"
+        ><div class="logo-box">⚡</div>
+        ServeSync AI</a
+      >
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#testimonials">Clients</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+917619624407" class="btn-ghost">📞 Call Us</a>
+        <a href="#booking" class="btn-primary">Book Free Demo</a>
+      </div>
+      <div class="ham" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#how" onclick="toggleMenu()">How It Works</a>
+      <a href="#benefits" onclick="toggleMenu()">Benefits</a>
+      <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+      <a href="#faq" onclick="toggleMenu()">FAQ</a>
+      <a
+        href="#booking"
+        onclick="toggleMenu()"
+        style="color: var(--cyan); font-weight: 700"
+        >🚀 Book Free Demo</a
+      >
+      <a href="tel:+917619624407">📞 7619624407</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+        <div class="grid-lines"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="pulse"></span>Now serving businesses across India
+        </div>
+        <h1>
+          Automate Calls, Websites<br />&amp; Customer Support<br />with
+          <span class="grad">AI</span>
+        </h1>
+        <p class="hero-sub">
+          AI Voice Agents + Smart Websites + Chatbots that handle your customers
+          24/7 — so you never miss a booking, order, or lead again.
+        </p>
+        <div class="hero-btns">
+          <a href="#booking" class="hero-btn-main">🚀 Book Free Demo</a>
+          <a href="#services" class="hero-btn-sec">Explore Services ↓</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-n">500+</div>
+            <div class="stat-l">Calls Handled Daily</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">98%</div>
+            <div class="stat-l">Customer Satisfaction</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">3x</div>
+            <div class="stat-l">More Bookings</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">60%</div>
+            <div class="stat-l">Staff Cost Reduced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem" id="problem">
+      <div class="section-tag">⚠️ The Problem</div>
+      <h2>
+        Your Business Is Losing Customers<br /><span class="grad"
+          >Right Now</span
+        >
+      </h2>
+      <p class="sec-sub">
+        Every missed call, unanswered message, and slow response is revenue
+        walking out the door.
+      </p>
+      <div class="prob-grid">
+        <div class="prob-card">
+          <div class="prob-icon">📵</div>
+          <h3>Missed Calls = Missed Revenue</h3>
+          <p>
+            62% of calls to small businesses go unanswered. Each one is a
+            patient, a diner, or a client you'll never hear from again.
+          </p>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">⏳</div>
+          <h3>Slow Responses Kill Conversions</h3>
+          <p>
+            Customers expect instant replies. If your WhatsApp takes hours,
+            they've already booked with your competitor.
+          </p>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">💸</div>
+          <h3>Staff Costs Keep Climbing</h3>
+          <p>
+            Hiring receptionists and call handlers is expensive — and they can
+            only work limited hours with limited patience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="section-tag">🛠️ Our Services</div>
+      <h2>
+        Powerful AI Solutions Built<br /><span class="grad"
+          >for Your Industry</span
+        >
+      </h2>
+      <p class="sec-sub">
+        Whether you run a dental clinic, restaurant, or any local business — we
+        have the perfect AI system for you.
+      </p>
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab(0)">
+          🦷 Dental AI Agent
+        </button>
+        <button class="tab" onclick="switchTab(1)">
+          🍽️ Restaurant AI Agent
+        </button>
+        <button class="tab" onclick="switchTab(2)">💬 Website + Chatbot</button>
+      </div>
+      <div class="tab-pane active" id="t0">
+        <div class="tp-left">
+          <h3>Dental Clinic AI<br />Voice Agent</h3>
+          <p>
+            Never miss a patient call again. Our AI handles every incoming call
+            — booking appointments, rescheduling, collecting patient info, and
+            sending WhatsApp confirmations — automatically.
+          </p>
+          <ul class="feat-list">
+            <li>Answers every incoming call automatically, 24/7</li>
+            <li>Books, reschedules &amp; cancels appointments intelligently</li>
+            <li>Collects patient details and medical history</li>
+            <li>Sends instant WhatsApp &amp; email confirmations</li>
+            <li>Integrates with your existing practice software</li>
+          </ul>
+        </div>
+        <div class="tp-right">
+          <div class="sim-label">
+            <span class="live-dot"></span>Live Call Simulation — SmileCare
+            Dental
+          </div>
+          <div class="sim-screen" id="sim0"></div>
+        </div>
+      </div>
+      <div class="tab-pane" id="t1">
+        <div class="tp-left">
+          <h3>Restaurant AI<br />Voice Agent</h3>
+          <p>
+            From table reservations to pre-orders — our AI handles every call so
+            your staff can focus on creating unforgettable dining experiences.
+            No more missed bookings during rush hour.
+          </p>
+          <ul class="feat-list">
+            <li>Takes table reservations and pre-orders by voice</li>
+            <li>Handles payments and generates invoices</li>
+            <li>Sends order &amp; booking confirmations instantly</li>
+            <li>Collects arrival time to optimize food prep</li>
+            <li>Manages peak-hour overflow calls seamlessly</li>
+          </ul>
+        </div>
+        <div class="tp-right">
+          <div class="sim-label">
+            <span class="live-dot"></span>Live Call Simulation — Spice Garden
+            Restaurant
+          </div>
+          <div class="sim-screen" id="sim1"></div>
+        </div>
+      </div>
+      <div class="tab-pane" id="t2">
+        <div class="tp-left">
+          <h3>Website AI Chatbot<br />+ Business Website</h3>
+          <p>
+            Get a stunning, conversion-optimized business website with a
+            built-in AI chatbot that turns visitors into customers. Answer
+            questions, capture leads, and close sales — automatically.
+          </p>
+          <ul class="feat-list">
+            <li>Modern, mobile-first website designed to convert</li>
+            <li>AI chatbot for instant 24/7 customer support</li>
+            <li>Answers FAQs and captures lead information</li>
+            <li>Connects chat data to WhatsApp &amp; email</li>
+            <li>Converts website visitors into paying customers</li>
+          </ul>
+        </div>
+        <div class="tp-right">
+          <div class="sim-label">
+            <span class="live-dot"></span>Live Chat Simulation
+          </div>
+          <div class="sim-screen" id="sim2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
+      <div style="text-align: center">
+        <div class="section-tag" style="margin: 0 auto 16px">
+          ⚙️ How It Works
+        </div>
+        <h2>
+          From Call to Conversion in<br /><span class="grad"
+            >4 Simple Steps</span
+          >
+        </h2>
+        <p class="sec-sub" style="margin: 0 auto">
+          No complicated setup. No coding. We handle everything — you just watch
+          your bookings grow.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Customer Reaches Out</h4>
+          <p>
+            A customer calls your number or visits your website — any time, day
+            or night.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>AI Responds Instantly</h4>
+          <p>
+            Our AI voice agent or chatbot greets them, understands their need,
+            and responds naturally.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Data Captured Automatically</h4>
+          <p>
+            Appointments, orders, contact info — everything is recorded without
+            manual effort.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>You Get Instant Updates</h4>
+          <p>
+            Receive real-time notifications on WhatsApp &amp; email with full
+            customer details.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits">
+      <div class="section-tag">🏆 Why ServeSync AI</div>
+      <h2>
+        The Unfair Advantage Your<br /><span class="grad"
+          >Competitors Don't Have</span
+        >
+      </h2>
+      <p class="sec-sub">
+        Every minute counts. Here's how ServeSync AI puts your business miles
+        ahead.
+      </p>
+      <div class="benefits-grid">
+        <div class="benefit">
+          <div class="benefit-icon">🌙</div>
+          <h4>24/7 Customer Support</h4>
+          <p>
+            Your AI never sleeps, never takes a break, and never has a bad day.
+            Every customer gets a perfect experience — always.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">📈</div>
+          <h4>3x More Bookings &amp; Orders</h4>
+          <p>
+            Instant responses mean more customers say "yes." Stop losing
+            business to voicemail and slow replies.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">💰</div>
+          <h4>60% Lower Staff Costs</h4>
+          <p>
+            Replace expensive receptionist costs with AI that handles thousands
+            of calls for a fraction of the price.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">⚡</div>
+          <h4>Instant Response = Higher Conversion</h4>
+          <p>
+            Businesses that respond in under 5 minutes are 100x more likely to
+            close the deal.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🔗</div>
+          <h4>WhatsApp &amp; Email Connected</h4>
+          <p>
+            All customer data flows directly to your WhatsApp and email. No
+            missed details, no lost leads.
+          </p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">🛡️</div>
+          <h4>Zero Setup Hassle</h4>
+          <p>
+            We handle everything — from AI training to integration. You'll be
+            live within 48 hours, guaranteed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi" id="testimonials">
+      <div style="text-align: center">
+        <div class="section-tag" style="margin: 0 auto 16px">
+          💬 What Our Clients Say
+        </div>
+        <h2>
+          Trusted by Businesses<br /><span class="grad">Across India</span>
+        </h2>
+      </div>
+      <div class="testi-grid">
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "We used to miss 40% of patient calls during procedures. Now our AI
+            handles every single call, books appointments, and sends
+            confirmations. Our bookings increased by 70% in the first month!"
+          </blockquote>
+          <div class="tcard-author">
+            <div
+              class="av"
+              style="
+                background: linear-gradient(135deg, #00e5ff, #0090b8);
+                color: #05080f;
+              "
+            >
+              DA
+            </div>
+            <div class="av-info">
+              <strong>Dr. Ananya Sharma</strong
+              ><span>DentFirst Dental Clinic, Mumbai</span>
+            </div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "During peak dinner hours, we'd lose 15-20 reservation calls daily.
+            ServeSync AI now handles all calls, takes pre-orders, and even
+            collects arrival times. Our table turnover improved dramatically."
+          </blockquote>
+          <div class="tcard-author">
+            <div
+              class="av"
+              style="
+                background: linear-gradient(135deg, #f59e0b, #ef4444);
+                color: #05080f;
+              "
+            >
+              RK
+            </div>
+            <div class="av-info">
+              <strong>Rajesh Kulkarni</strong
+              ><span>Spice Route Restaurant, Pune</span>
+            </div>
+          </div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "The AI chatbot on our website captures more leads than our contact
+            form ever did. It answers questions instantly and sends us qualified
+            leads on WhatsApp. Absolute game changer for our salon!"
+          </blockquote>
+          <div class="tcard-author">
+            <div
+              class="av"
+              style="
+                background: linear-gradient(135deg, #7c3aed, #a855f7);
+                color: #fff;
+              "
+            >
+              PM
+            </div>
+            <div class="av-info">
+              <strong>Priya Mehta</strong
+              ><span>Glow Studio Salon, Bangalore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner" id="cta">
+      <div class="cta-inner">
+        <div class="section-tag" style="margin: 0 auto 16px">
+          🚀 Get Started
+        </div>
+        <h2>Get Your AI System <span class="grad">Today</span></h2>
+        <p>
+          Join hundreds of Indian businesses automating their customer
+          interactions. Setup takes less than 48 hours.
+        </p>
+        <a href="#booking">🚀 Book Your Free Demo Now</a>
+        <div class="cta-contacts">
+          <a href="tel:+917619624407">📞 7619624407</a>
+          <a href="mailto:servesyncai@gmail.com">📧 servesyncai@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--surface)">
+      <div style="text-align: center">
+        <div class="section-tag" style="margin: 0 auto 16px">❓ FAQ</div>
+        <h2>Frequently Asked <span class="grad">Questions</span></h2>
+        <p class="sec-sub" style="margin: 0 auto">
+          Everything you need to know before getting started.
+        </p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can AI really replace my reception staff?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Our AI doesn't replace your team — it supercharges them. It
+              handles routine calls, bookings, and FAQs so your staff can focus
+              on high-value tasks. Think of it as a tireless assistant that
+              works 24/7 alongside your existing team.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Does the chatbot work on my existing website?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Yes! Our AI chatbot integrates with any website — WordPress, Wix,
+              Shopify, or custom HTML. We can also build you a brand new,
+              conversion-optimized website with the chatbot pre-installed.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I customize the chatbot's responses?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Absolutely. We train the AI specifically on your business — your
+              services, pricing, FAQs, and brand voice. You can update responses
+              any time, and we'll fine-tune the AI to match exactly how you want
+              to communicate.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does it take to set up? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Most businesses are fully live within 48 hours. We handle
+              everything — from AI training to integration with your phone
+              system, website, and messaging platforms. No technical knowledge
+              needed.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What languages does the AI support? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Our AI currently supports English and Hindi, with more Indian
+              languages coming soon. The voice agent understands natural speech
+              patterns and accents common in India.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Is my customer data safe and secure? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>
+              Security is our top priority. All data is encrypted, stored
+              securely, and fully compliant with data protection standards. We
+              never share your customer data with third parties — you have full
+              ownership.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="booking" id="booking">
+      <div class="booking-inner">
+        <div class="book-left">
+          <div class="section-tag">🚀 Free Demo</div>
+          <h2>
+            Book Your <span class="grad">Free Demo</span><br />in 48 Hours
+          </h2>
+          <p class="sec-sub">
+            See exactly how AI automates your calls, bookings &amp; support —
+            live walkthrough tailored to your business.
+          </p>
+          <div class="book-perks">
+            <div class="bperk">
+              <div class="bperk-icon">🎯</div>
+              <div>
+                <strong>Personalized Demo</strong>
+                <p>
+                  Live walkthrough tailored to your exact business type and
+                  goals.
+                </p>
+              </div>
+            </div>
+            <div class="bperk">
+              <div class="bperk-icon">⚡</div>
+              <div>
+                <strong>Ready in 48 Hours</strong>
+                <p>
+                  We handle setup, AI training &amp; integration — you do
+                  nothing.
+                </p>
+              </div>
+            </div>
+            <div class="bperk">
+              <div class="bperk-icon">📲</div>
+              <div>
+                <strong>WhatsApp Confirmation</strong>
+                <p>
+                  Our team will reach out on WhatsApp within 2 hours of your
+                  request.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="book-revs">
+            <div class="mini-rev">
+              <div class="mr-top">
+                <div
+                  class="mr-av"
+                  style="
+                    background: linear-gradient(135deg, #00e5ff, #0090b8);
+                    color: #05080f;
+                  "
+                >
+                  RS
+                </div>
+                <div class="mr-info">
+                  <strong>Dr. Rajesh Sharma</strong
+                  ><span>Smile Dental Clinic, Mumbai</span>
+                </div>
+                <div class="mr-stars">★★★★★</div>
+              </div>
+              <p class="mr-text">
+                "Missed appointment calls dropped by 80%. We added ₹2.4L revenue
+                in the first month alone."
+              </p>
+            </div>
+            <div class="mini-rev">
+              <div class="mr-top">
+                <div
+                  class="mr-av"
+                  style="
+                    background: linear-gradient(135deg, #7c3aed, #a855f7);
+                    color: #fff;
+                  "
+                >
+                  PK
+                </div>
+                <div class="mr-info">
+                  <strong>Priya Kapoor</strong
+                  ><span>Aura Salon &amp; Spa, Delhi</span>
+                </div>
+                <div class="mr-stars">★★★★★</div>
+              </div>
+              <p class="mr-text">
+                "Within 48 hours our AI was taking bookings, answering FAQs, and
+                sending reminders. Game changer!"
+              </p>
+            </div>
+          </div>
+          <div class="trust-bar">
+            <span style="color: var(--gold)">★★★★★</span
+            ><span>4.9/5 · Trusted by 200+ businesses across India</span>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div id="formView">
+            <h3>🚀 Book Your Free Demo</h3>
+            <p>
+              Fill in the details — we'll contact you on WhatsApp within 2
+              hours.
+            </p>
+            <div class="fg">
+              <div class="field">
+                <label for="fname">Full Name <span class="req">*</span></label>
+                <input type="text" id="fname" placeholder="Rahul Sharma" />
+                <span class="errmsg" id="e-fname"
+                  >Please enter your full name.</span
+                >
+              </div>
+              <div class="field">
+                <label for="femail">Email <span class="req">*</span></label>
+                <input
+                  type="email"
+                  id="femail"
+                  placeholder="you@business.com"
+                />
+                <span class="errmsg" id="e-email"
+                  >Enter a valid email address.</span
+                >
+              </div>
+              <div class="field full">
+                <label>WhatsApp Number <span class="req">*</span></label>
+                <div class="phone-wrap">
+                  <select id="fcc">
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+60">🇲🇾 +60</option>
+                    <option value="+61">🇦🇺 +61</option>
+                  </select>
+                  <input
+                    type="tel"
+                    id="fphone"
+                    placeholder="9876543210"
+                    maxlength="15"
+                    inputmode="numeric"
+                  />
+                </div>
+                <span class="errmsg" id="e-phone"
+                  >Enter a valid phone number.</span
+                >
+              </div>
+              <div class="field full">
+                <label for="fbiz"
+                  >Business Type <span class="req">*</span></label
+                >
+                <select id="fbiz">
+                  <option value="" disabled selected>
+                    Select your business type…
+                  </option>
+                  <option>🦷 Dental Clinic</option>
+                  <option>🍽️ Restaurant / Cafe</option>
+                  <option>💇 Salon &amp; Spa</option>
+                  <option>🛒 Retail Store</option>
+                  <option>🏥 Healthcare / Clinic</option>
+                  <option>🏠 Real Estate</option>
+                  <option>📚 Education / Coaching</option>
+                  <option>🏢 Other Business</option>
+                </select>
+                <span class="errmsg" id="e-biz"
+                  >Please select your business type.</span
+                >
+              </div>
+              <div class="field">
+                <label for="fdate">Preferred Date</label>
+                <input type="date" id="fdate" />
+              </div>
+              <div class="field">
+                <label for="fslot">Preferred Time</label>
+                <select id="fslot">
+                  <option>Any time works</option>
+                  <option>9 AM – 11 AM</option>
+                  <option>11 AM – 1 PM</option>
+                  <option>1 PM – 3 PM</option>
+                  <option>3 PM – 5 PM</option>
+                  <option>5 PM – 7 PM</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="fmsg">Anything to know? (Optional)</label>
+                <textarea
+                  id="fmsg"
+                  placeholder="E.g. we handle 30+ calls daily and need help on weekends…"
+                ></textarea>
+              </div>
+            </div>
+            <button class="submit-btn" id="submitBtn" onclick="doSubmit()">
+              <span id="btnTxt">🚀 Book My Free Demo Now</span>
+              <div class="spinner" id="spin"></div>
+            </button>
+            <p class="form-note">
+              🔒 Your data is 100% safe. We never share your info with third
+              parties.<br />Questions?
+              <a href="mailto:servesyncai@gmail.com">servesyncai@gmail.com</a>
+            </p>
+          </div>
+          <div class="success-view" id="successView">
+            <div class="sicon">🎉</div>
+            <h3>Demo Booked!</h3>
+            <p>
+              Our team will contact you on
+              <strong>WhatsApp within 2 hours</strong> to confirm your slot. Get
+              ready to see AI in action!
+            </p>
+            <a href="#hero" class="back-link">← Back to Top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <a href="#hero" class="foot-logo"
+        ><div
+          class="logo-box"
+          style="width: 28px; height: 28px; font-size: 0.9rem"
+        >
+          ⚡
+        </div>
+        ServeSync AI</a
+      >
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#faq">FAQ</a>
+        <a href="tel:+917619624407">📞 7619624407</a>
+        <a href="mailto:servesyncai@gmail.com">📧 Email Us</a>
+      </div>
+      <p class="foot-copy">
+        © 2026 ServeSync AI. Built with ❤️ for Indian businesses.
+      </p>
+    </footer>
+
+    <!-- FAB -->
+    <div class="fab">
+      <a href="#booking" class="fab-btn">🚀 Book Free Demo</a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
