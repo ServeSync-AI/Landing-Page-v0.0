@@ -139,7 +139,30 @@ function v(id) {
   return g(id) ? g(id).value.trim() : '';
 }
 function isEmail(s) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+  // 1. Standard email format regex
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!regex.test(s)) return false;
+
+  const parts = s.split("@");
+  const username = parts[0].toLowerCase();
+  const domain = parts[1].toLowerCase();
+
+  // 2. Prevent dummy usernames
+  const dummyUsernames = ["abc", "xyz", "test", "example", "admin", "placeholder", "user", "mail"];
+  if (dummyUsernames.includes(username)) return false;
+
+  // 3. Prevent dummy domains
+  const dummyDomains = ["abc.com", "xyz.com", "test.com", "example.com", "mail.com", "email.com"];
+  if (dummyDomains.includes(domain)) return false;
+
+  // 4. Strict check for Gmail typos
+  if (domain.includes("gmail") || domain.includes("gmal") || domain.includes("gamil") || domain.includes("gmaile")) {
+    if (domain !== "gmail.com") {
+      return false;
+    }
+  }
+
+  return true;
 }
 function setE(fid, eid, show) {
   const fieldEl = g(fid);
@@ -158,7 +181,7 @@ function validate() {
     setE("femail", "e-email", true);
     ok = false;
   } else setE("femail", "e-email", false);
-  if (v("fphone").length < 6) {
+  if (v("fphone").length !== 10) {
     setE("fphone", "e-phone", true);
     ok = false;
   } else setE("fphone", "e-phone", false);
@@ -177,6 +200,20 @@ function doSubmit() {
   btn.disabled = true;
   if (txt) txt.textContent = "Booking…";
   if (sp) sp.style.display = "block";
+
+  // Payload for FormSubmit email dispatch
+  var emailData = {
+    "_subject": "New Demo Booking — ServeSync AI",
+    "Name": v("fname"),
+    "Email": v("femail"),
+    "Phone": g("fcc").value + " " + v("fphone"),
+    "Business": v("fbiz"),
+    "Preferred Date": v("fdate") || "Flexible",
+    "Time Slot": g("fslot").value,
+    "Message": v("fmsg") || "None"
+  };
+
+  // WhatsApp text message payload
   var msg = encodeURIComponent(
     "🚀 *New Demo Booking — ServeSync AI*\n\n" +
       "👤 *Name:* " +
@@ -203,12 +240,37 @@ function doSubmit() {
       "\n\n" +
       "_Submitted via ServeSync AI website_",
   );
-  setTimeout(function () {
+
+  // Deliver submission to servesyncai@gmail.com asynchronously
+  fetch("https://formsubmit.co/ajax/servesyncai@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(emailData)
+  })
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    console.log("FormSubmit API Success response:", data);
+  })
+  .catch(function (err) {
+    console.error("FormSubmit API Error response:", err);
+  })
+  .finally(function () {
+    // Smooth transition to WhatsApp redirect and show confirmation
     window.open("https://wa.me/917619624407?text=" + msg, "_blank");
     g("formView").style.display = "none";
     g("successView").style.display = "flex";
     g("successView").classList.remove("hidden");
-  }, 800);
+
+    // Reset UI states in case they navigate back
+    btn.disabled = false;
+    if (txt) txt.textContent = "🚀 Book My Free Demo Now";
+    if (sp) sp.style.display = "none";
+  });
 }
 
 // ── DYNAMIC UX INTERACTION LISTENERS ──
@@ -238,10 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const fphoneEl = g("fphone");
   if (fphoneEl) {
     fphoneEl.addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, "");
+      this.value = this.value.replace(/\D/g, "").slice(0, 10);
     });
     fphoneEl.addEventListener("blur", function () {
-      setE("fphone", "e-phone", v("fphone").length < 6);
+      setE("fphone", "e-phone", v("fphone").length !== 10);
     });
   }
   
