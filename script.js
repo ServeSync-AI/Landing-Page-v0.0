@@ -223,21 +223,29 @@ function doSubmit() {
     body: JSON.stringify(emailData)
   })
   .then(function (res) {
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
     return res.json();
   })
   .then(function (data) {
     console.log("FormSubmit API Success response:", data);
+    if (data.success === "true" || data.success === true) {
+      // Smooth transition to show confirmation
+      g("formView").style.display = "none";
+      g("successView").style.display = "flex";
+      g("successView").classList.remove("hidden");
+    } else {
+      // FormSubmit activation or setup issue
+      alert("Submission pending activation: " + (data.message || "Please check servesyncai@gmail.com inbox to activate FormSubmit."));
+    }
   })
   .catch(function (err) {
     console.error("FormSubmit API Error response:", err);
+    alert("Submission failed. If you are opening index.html directly from your file system (file://), please run a local web server (e.g., Live Server in VS Code, or python -m http.server) to allow AJAX requests, or check servesyncai@gmail.com inbox to activate FormSubmit.");
   })
   .finally(function () {
-    // Smooth transition to show confirmation
-    g("formView").style.display = "none";
-    g("successView").style.display = "flex";
-    g("successView").classList.remove("hidden");
-
-    // Reset UI states in case they navigate back
+    // Reset UI states
     btn.disabled = false;
     if (txt) txt.textContent = "🚀 Book My Free Demo Now";
     if (sp) sp.style.display = "none";
