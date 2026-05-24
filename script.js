@@ -213,34 +213,6 @@ function doSubmit() {
     "Message": v("fmsg") || "None"
   };
 
-  // WhatsApp text message payload
-  var msg = encodeURIComponent(
-    "🚀 *New Demo Booking — ServeSync AI*\n\n" +
-      "👤 *Name:* " +
-      v("fname") +
-      "\n" +
-      "📧 *Email:* " +
-      v("femail") +
-      "\n" +
-      "📱 *Phone:* " +
-      g("fcc").value +
-      v("fphone") +
-      "\n" +
-      "🏢 *Business:* " +
-      v("fbiz") +
-      "\n" +
-      "📅 *Date:* " +
-      (v("fdate") || "Flexible") +
-      "\n" +
-      "⏰ *Time:* " +
-      g("fslot").value +
-      "\n" +
-      "💬 *Note:* " +
-      (v("fmsg") || "None") +
-      "\n\n" +
-      "_Submitted via ServeSync AI website_",
-  );
-
   // Deliver submission to servesyncai@gmail.com asynchronously
   fetch("https://formsubmit.co/ajax/servesyncai@gmail.com", {
     method: "POST",
@@ -260,8 +232,7 @@ function doSubmit() {
     console.error("FormSubmit API Error response:", err);
   })
   .finally(function () {
-    // Smooth transition to WhatsApp redirect and show confirmation
-    window.open("https://wa.me/917619624407?text=" + msg, "_blank");
+    // Smooth transition to show confirmation
     g("formView").style.display = "none";
     g("successView").style.display = "flex";
     g("successView").classList.remove("hidden");
