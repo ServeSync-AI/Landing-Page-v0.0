@@ -223,26 +223,27 @@ function doSubmit() {
     body: JSON.stringify(emailData)
   })
   .then(function (res) {
-    if (!res.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return res.json();
+    return res.json().then(function (data) {
+      return { ok: res.ok, status: res.status, data: data };
+    }).catch(function () {
+      // In case response is not JSON
+      return { ok: res.ok, status: res.status, data: { message: "Unexpected server response" } };
+    });
   })
-  .then(function (data) {
-    console.log("FormSubmit API Success response:", data);
-    if (data.success === "true" || data.success === true) {
+  .then(function (result) {
+    console.log("FormSubmit API response:", result.data);
+    if (result.ok && (result.data.success === "true" || result.data.success === true)) {
       // Smooth transition to show confirmation
       g("formView").style.display = "none";
       g("successView").style.display = "flex";
       g("successView").classList.remove("hidden");
     } else {
-      // FormSubmit activation or setup issue
-      alert("Submission pending activation: " + (data.message || "Please check servesyncai@gmail.com inbox to activate FormSubmit."));
+      throw new Error(result.data.message || "Please check servesyncai@gmail.com inbox to activate FormSubmit.");
     }
   })
   .catch(function (err) {
-    console.error("FormSubmit API Error response:", err);
-    alert("Submission failed. If you are opening index.html directly from your file system (file://), please run a local web server (e.g., Live Server in VS Code, or python -m http.server) to allow AJAX requests, or check servesyncai@gmail.com inbox to activate FormSubmit.");
+    console.error("FormSubmit API Error:", err);
+    alert("Submission failed: " + err.message + "\n\nIf you have not activated FormSubmit yet, please check the servesyncai@gmail.com inbox (and spam folder) for the activation link.");
   })
   .finally(function () {
     // Reset UI states
